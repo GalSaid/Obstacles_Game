@@ -1,13 +1,15 @@
-package com.example.assignment1;
+package com.example.assignment1.Logic;
 
-import android.util.Log;
+import com.example.assignment1.Utilities.Type;
 
 public class GameManager {
 
     private int currLives = 3;
     private int initialLives = 3; //for the reset game
+    private int score = 0;
     private int numOfLines; //included the player
     private int numOfRoutes;
+    private int cockroachCol;
     private Type[][] matrix;
 
     public GameManager(int numOfRoutes, int numOfLines, int initialLives) {
@@ -21,9 +23,14 @@ public class GameManager {
         resetGame();
     }
 
-    public void addSpray() {
+    public void addItem() { //add spray or garbage
+        int Item =(int) (Math.random() * 2);
         int routeNum = (int) (Math.random() * numOfRoutes);
-        matrix[0][routeNum] = Type.SPRAY;
+        matrix[0][routeNum] = Item==0? Type.SPRAY: Type.GARBAGE;
+    }
+
+    public int getScore(){
+        return score;
     }
 
     public void updateMatrix() { //Lower the matrix row down
@@ -35,7 +42,7 @@ public class GameManager {
             matrix[0][i] = Type.EMPTY;
     }
 
-    public boolean collisionExists() {
+    public boolean negativeCollisionExists() {
         for (int col = 0; col < numOfRoutes; col++) {
             if (matrix[numOfLines - 1][col] == Type.COCKROACH && matrix[numOfLines - 2][col] == Type.SPRAY)
                 return true;
@@ -43,6 +50,15 @@ public class GameManager {
         return false;
     }
 
+    public boolean positiveCollisionExists() {
+        for (int col = 0; col < numOfRoutes; col++) {
+            if (matrix[numOfLines - 1][col] == Type.COCKROACH && matrix[numOfLines - 2][col] == Type.GARBAGE){
+                score+=5;
+                return true;
+            }
+        }
+        return false;
+    }
     public void decreaseLive() {
         currLives--;
     }
@@ -51,19 +67,16 @@ public class GameManager {
         return currLives;
     }
 
-    public int getCockroachCol() { //where is the player
-        for (int i = 0; i < numOfRoutes; i++)
-            if (matrix[numOfLines - 1][i] == Type.COCKROACH) {
-                return i;
-            }
-        return -1;
+
+    public int getCockroachCol(){
+        return cockroachCol;
     }
 
-    public int setCockroachCol(int move) {
+    public void setCockroachCol(int move) {
         int col = getCockroachCol();
         matrix[numOfLines - 1][col] = Type.EMPTY;
         matrix[numOfLines - 1][col + move] = Type.COCKROACH;
-        return col + move;
+       cockroachCol+=move;
     }
 
     public void setCurrLives(int lives) {
@@ -75,11 +88,12 @@ public class GameManager {
     }
 
     public void resetGame() { //after a loss the game is reset
+        cockroachCol=numOfRoutes / 2;
         for (int i = 0; i < numOfLines; i++)
             for (int j = 0; j < numOfRoutes; j++) {
                 matrix[i][j] = Type.EMPTY;
             }
-        matrix[numOfLines - 1][numOfRoutes / 2] = Type.COCKROACH;
+        matrix[numOfLines - 1][cockroachCol] = Type.COCKROACH;
         setCurrLives(initialLives);
     }
 }

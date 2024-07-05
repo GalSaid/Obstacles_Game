@@ -1,4 +1,4 @@
-package com.example.assignment1;
+package com.example.assignment1.Utilities;
 
 import android.content.Context;
 import android.media.Ringtone;
@@ -7,10 +7,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.example.assignment1.R;
 
 public class MySignal {
 
@@ -45,10 +44,10 @@ public class MySignal {
         }
     }
 
-    public void playSound() {
+    public void playSound(int soundID) {
         try {
             //Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-            Uri soundUri = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.sound_spray);
+            Uri soundUri = Uri.parse("android.resource://" + context.getPackageName() + "/" +soundID);
             Ringtone r = RingtoneManager.getRingtone(context, soundUri);
             r.play();
         } catch (Exception e) {

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#957874"
+    tools:context=".Activities.GameActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_CARDVIEW_gameOver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:padding="30dp"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="10dp">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E0D9D4"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:text="GAME OVER!"
+                android:textAlignment="center"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="30dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/game_LBLCARD_finalScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:text="Final Score: "
+                    android:textAlignment="center"
+             />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/game_LBLCARD_final_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="000"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/game_EDITTEXT_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Enter Your Name"
+                android:textSize="20sp"
+                android:textColor="#AD9491"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/game_BTNCARD_ok"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_margin="30dp"
+                android:textSize="24sp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="#AD9491"
+                android:text="OK"
+                app:cornerRadius="10dp">
+
+            </com.google.android.material.button.MaterialButton>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/game_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        tools:text="000"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        />
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/game_LAY_heartLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/game_IMG_heart1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_heart"/>
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="0dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/game_IMG_heart2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_heart"/>
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="0dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/game_IMG_heart3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_heart"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/game_LAY_matrixLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_below="@id/game_LAY_heartLayout"
+        android:layout_above="@id/game_LAY_arrowsLayout"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray00"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_garbage"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray01"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray02"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray03"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray04"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray10"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray11"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray12"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray13"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray14"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray20"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray21"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray22"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray23"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray24"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray30"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray31"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray32"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray33"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray34"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_garbage"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray40"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray41"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray42"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray43"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_spray44"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_spray"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_cockroach0"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:src="@drawable/img_cockroach"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_cockroach1"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:src="@drawable/img_cockroach"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_cockroach2"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:src="@drawable/img_cockroach"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_cockroach3"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:src="@drawable/img_cockroach"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_cockroach4"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:src="@drawable/img_cockroach"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:id="@+id/game_LAY_arrowsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/game_BTN_left"
+            style="@style/Widget.Material3.Button.Icon"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_alignParentLeft="true"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:backgroundTint="#46beb2"
+            app:icon="@drawable/ic_left"
+            app:iconGravity="textEnd"
+            app:iconSize="42dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/game_BTN_right"
+            style="@style/Widget.Material3.Button.Icon"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_alignParentRight="true"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:backgroundTint="#46beb2"
+            app:icon="@drawable/ic_right"
+            app:iconGravity="textEnd"
+            app:iconSize="42dp"  />
+    </RelativeLayout>
+
+</RelativeLayout>

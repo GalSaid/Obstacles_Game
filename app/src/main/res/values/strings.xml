@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Assignment1</string>
+    <string name="app_name">Obstacle Game</string>
+    <string name="speed_key_name">SPEED</string>
+    <string name="sensor_key_name">SENSOR</string>
+    <string name="players_list">PLAYERSLIST</string>
+
+
 </resources>

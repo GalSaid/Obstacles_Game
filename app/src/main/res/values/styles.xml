@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alert Dialog -->
+    <style name="MyThemeOverlay.MaterialComponents.MaterialAlertDialog" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/MyTitle_MaterialAlertDialog.MaterialComponents.Title.Text</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/BodyTextAppearance.MaterialComponents.Body</item>
+        <item name="buttonBarPositiveButtonStyle">@style/ButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/ButtonStyle</item>
+    </style>
+
+    <style name="MyTitle_MaterialAlertDialog.MaterialComponents.Title.Text" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="fontFamily">sans-serif-condensed-light</item>
+    </style>
+
+
+    <style name="BodyTextAppearance.MaterialComponents.Body" parent="@style/MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">sans-serif-condensed-light</item>
+    </style>
+
+    <style name="ButtonStyle" parent="@style/Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="backgroundTint">#8B4513</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+</resources>

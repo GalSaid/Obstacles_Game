@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+
 }
 
 android {
@@ -37,4 +39,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
+
+    //Glide:
+    implementation(libs.glide)
+    //Gson:
+    implementation(libs.gson)
+
 }

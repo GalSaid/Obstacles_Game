@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scores"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ScoresActivity"
+    android:orientation="vertical"
+    android:background="@drawable/score_board_gradient"
+    android:keepScreenOn="true"
+    >
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/scores_BTN_return"
+            style="@style/Widget.Material3.Button.Icon"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_alignParentLeft="true"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:icon="@drawable/ic_left"
+            app:iconGravity="textEnd"
+            app:iconSize="32dp" />
+        <View
+            android:layout_width="12dp"
+            android:layout_height="0dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/scores_LBL_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            android:padding="8dp"
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            android:text="SCORES TABLE"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    <FrameLayout
+        android:id="@+id/scores_LAY_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <FrameLayout
+        android:id="@+id/scores_LAY_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        android:layout_weight="1"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

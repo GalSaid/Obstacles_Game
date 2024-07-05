@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.Fragment_List">
+
+    <LinearLayout
+        android:id="@+id/list_LAYOUT_rows"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#957A66"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textview.MaterialTextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="PLAYER"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="8"
+            android:layout_marginStart="8dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="LOCATION"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/white"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="8"
+            />
+        <com.google.android.material.textview.MaterialTextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="SCORE"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="8"
+            />
+
+
+
+    </LinearLayout>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/list_LAYOUT_rows"
+    android:background="@drawable/score_board_gradient"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_LST_players"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        tools:listitem="@layout/horizontal_player_item"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</RelativeLayout>
