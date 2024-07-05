@@ -7,8 +7,8 @@ public class GameManager {
     private int currLives = 3;
     private int initialLives = 3; //for the reset game
     private int score = 0;
-    private int numOfLines; //included the player
-    private int numOfRoutes;
+    private final int numOfLines; //included the player
+    private final int numOfRoutes;
     private int cockroachCol;
     private Type[][] matrix;
 

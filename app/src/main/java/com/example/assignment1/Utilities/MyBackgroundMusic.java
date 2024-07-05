@@ -18,7 +18,7 @@ public class MyBackgroundMusic {
         return instance;
     }
 
-    public static MyBackgroundMusic init(Context context){
+    public static void init(Context context){
         if (instance == null){
             synchronized (MyBackgroundMusic.class){
                 if (instance == null){
@@ -26,7 +26,6 @@ public class MyBackgroundMusic {
                 }
             }
         }
-        return getInstance();
     }
 
     public void setResourceId(int RES_ID) {

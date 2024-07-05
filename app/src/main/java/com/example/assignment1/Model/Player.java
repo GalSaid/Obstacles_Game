@@ -1,5 +1,7 @@
 package com.example.assignment1.Model;
 
+import androidx.annotation.NonNull;
+
 public class Player implements Comparable<Player> {
     private String name;
     private int score;
@@ -45,6 +47,7 @@ public class Player implements Comparable<Player> {
         return Integer.compare(other.getScore(), this.getScore()); // Sort from highest to lowest
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "Player{" +

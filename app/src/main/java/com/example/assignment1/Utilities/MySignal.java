@@ -9,7 +9,6 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.widget.Toast;
 
-import com.example.assignment1.R;
 
 public class MySignal {
 

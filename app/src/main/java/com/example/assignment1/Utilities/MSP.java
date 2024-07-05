@@ -12,13 +12,12 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class MSP {
 
     private static MSP msp;
-    private Gson gson;
-    private SharedPreferences prefs;
+    private final Gson gson;
+    private final SharedPreferences prefs;
 
     private MSP(Context context) {
         prefs = context.getSharedPreferences("MyPreference", MODE_PRIVATE);

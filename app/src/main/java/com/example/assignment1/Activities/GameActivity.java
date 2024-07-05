@@ -1,10 +1,7 @@
 package com.example.assignment1.Activities;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -12,21 +9,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.example.assignment1.Interfaces.MoveCallback;
-import com.example.assignment1.Interfaces.PlayerCallback;
 import com.example.assignment1.Logic.GameManager;
 import com.example.assignment1.Model.Player;
 import com.example.assignment1.Utilities.MSP;
-import android.Manifest;
-
-
 import com.example.assignment1.Utilities.MoveDetector;
 import com.example.assignment1.Utilities.MyBackgroundMusic;
 import com.example.assignment1.Utilities.MySignal;
@@ -34,17 +24,13 @@ import com.example.assignment1.R;
 import com.example.assignment1.Utilities.Type;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class GameActivity extends AppCompatActivity {
 
-    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private final Handler handler = new Handler();
     private final int NUM_OF_ROUTES = 5;
     private final int NUM_OF_LINES = 6; //included the player

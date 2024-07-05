@@ -5,20 +5,19 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.util.Log;
 
 import com.example.assignment1.Interfaces.MoveCallback;
 
 
 public class MoveDetector {
 
-    private SensorManager sensorManager;
-    private Sensor sensor;
+    private final SensorManager sensorManager;
+    private final Sensor sensor;
     private SensorEventListener sensorEventListener;
 
-    private long timestamp = 0l;
+    private long timestamp = 0L;
 
-    private MoveCallback moveCallback;
+    private final MoveCallback moveCallback;
 
     public MoveDetector(Context context, MoveCallback moveCallback) {
         this.sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
